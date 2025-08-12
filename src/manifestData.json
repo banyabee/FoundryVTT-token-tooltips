@@ -7,6 +7,11 @@
   "styles": ["styles.css"],
   "languages": [
     {
+    "lang":"ko",
+    "name":"Korean",
+    "path":"lang/ko.json"
+    },
+    {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
