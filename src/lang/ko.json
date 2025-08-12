@@ -1,0 +1,305 @@
+{
+  "illandril-token-tooltips": {
+    "setting": {
+      "debug": {
+        "label": "디버그 모드",
+        "hint": "모듈 개발자가 특별히 요청하지 않는 한 이 기능을 비활성화 상태로 두십시오 (활성화 시 속도가 느려집니다)."
+      },
+      "menu": {
+        "customOptions": {
+          "name": "툴팁 값",
+          "label": "툴팁 값 설정",
+          "hint": "툴팁에 표시되는 값을 사용자 지정합니다. 사용자 지정 툴팁 값은 토큰의 액터와 관련된 모든 수치 데이터를 표시할 수 있게 해줍니다.",
+
+          "title": "툴팁 값 설정 구성",
+
+          "instructions": {
+            "top": "각 표준 툴팁 값에 대해, 해당 값을 볼 수 있는 데 필요한 권한을 선택하세요 (참고: 모든 표준 값이 모든 시스템에 표시되는 것은 아닙니다). 각 사용자 지정 툴팁 값에 대해, 이름, 아이콘, 그리고 데이터 키를 지정하세요.",
+            "name": "표시할 데이터의 이름입니다. 아이콘을 지정하지 않으면 툴팁에 아이콘 대신 이름이 표시됩니다.",
+            "icon": "툴팁에 표시할 Font Awesome 아이콘의 이름입니다. 올바른 아이콘을 선택할 수 있도록 입력란 오른쪽에 아이콘 미리보기가 표시됩니다. 비워두면 아이콘 대신 이름이 표시됩니다. 모든 Font Awesome 아이콘을 사용할 수 있는 것은 아닙니다 (사용 가능한 아이콘은 이 모듈이 아닌 FoundryVTT 자체에 포함된 아이콘입니다).",
+            "iconLink": "Font Awesome 웹사이트에서 아이콘 검색",
+            "attributeKey": "툴팁에 표시하려는 값을 찾기 위해 사용되는 속성 키입니다. 예를 들어, DnD5e 시스템에서 생명체의 CR을 표시하려면 `system.details.cr`을 지정하세요. 원하는 정보에 대한 올바른 데이터 키를 찾는 데 도움을 받기 위해 데이터 키 디버거를 활성화할 수 있습니다.\n\n+, -, * (곱하기), / (나누기), % (나머지)를 사용하여 기본적인 수학 연산을 수행할 수 있습니다 (연산은 PEMDAS가 아닌 왼쪽에서 오른쪽으로 적용됩니다; 예를 들어 `5+5*2`는 15가 아닌 20이 됩니다). 또한 <, >, <=, >=, != (같지 않음), 또는 == (같음)을 사용하여 지정된 조건이 충족되지 않으면 해당 줄을 숨길 수 있습니다 (예를 들어, `system.skills.perception.value != 0 + 10`은 토큰의 지각 기술이 0이 아닐 때만 토큰의 지각 기술보다 10 더 큰 값을 표시합니다). & 기호를 사용하여 여러 값을 연결할 수 있으며, \"따옴표\"를 사용하여 고정 문자열을 지정할 수 있습니다 (예: `system.carryWeight.value & \" lbs\"`는 `72 lbs`로 표시됩니다).",
+            "permission": "플레이어가 액터의 툴팁에서 이 값을 보기 위해 가져야 하는 최소 권한입니다 (툴팁을 볼 수 있다는 전제 하에 - 메인 설정 페이지의 '툴팁 가시성' 설정을 참조하세요). 참고: GM은 모든 액터에 대해 소유자로 간주됩니다.",
+            "gmPermission": "이 설정은 플레이어가 자신의 세부 정보를 툴팁에서 볼 수 있도록 허용하는 동시에 GM에게는 해당 정보를 숨깁니다. 참고: 이 설정은 토큰이 플레이어 소유자인지 여부를 확인하며 캐릭터 유형을 확인하지 않으므로, 플레이어 소유자가 있는 NPC 캐릭터는 플레이어 정보로 간주되고 플레이어 소유자가 없는 PC 캐릭터는 NPC 정보로 간주됩니다.",
+            "showOnPersistent": "이 설정은 세부 정보가 호버 툴팁에는 표시되지만 지속적 툴팁에서는 숨겨지도록 허용합니다. 참고: 이 설정이 활성화되더라도 세부 정보가 지속적 툴팁에 표시되려면 다른 권한 설정도 통과해야 합니다. 데이터가 지속적 툴팁에 표시되면서 호버 툴팁에서는 숨겨질 수는 없습니다.",
+            "show": "도움말 표시",
+            "hide": "도움말 숨기기",
+            "bugs": "버그를 신고하거나 기능을 요청하려면 여기를 클릭하세요"
+          },
+
+          "header": {
+          "name": "이름",
+          "icon": "아이콘",
+          "attributeKey": "데이터 키",
+          "permission": "표시 권한",
+          "gmPermission": "GM에게\n플레이어 정보 표시?",
+          "showOnPersistent": "지속적으로\n표시?"
+          },
+
+          "standardOptionsTitle": "표준 툴팁 값 (모든 시스템에 표시되지 않을 수 있음)",
+          "customOptionsTitle": "사용자 지정 툴팁 값",
+
+          "standard": {
+            "hp.name": "체력",
+            "hp.key": "다양함 (예: system.attributes.hp)",
+  
+            "ac.name": "방어도",
+            "ac.key": "다양함 (예: `system.attributes.ac`)",
+  
+            "movement.name": "이동",
+            "movement.key": "다양함 (예: `system.stats.speed`)",
+  
+            "ruler.name": "거리 측정기",
+            "ruler.key": "선택된 토큰으로부터의 계산된 거리",
+
+            "attributesPlus.name": "능력치 (+수정치)",
+            "attributesPlus.help": "능력치와 관련 수정치 (적절한 시스템의 능력치 기반 내성 굴림 포함).",
+            "attributesPlus.icon": "label",
+            "attributesPlus.key": "다양함 (예: `system.abilities.str`)",
+  
+            "passives.name": "수동적 기술",
+            "passives.key": "다양함 (예: `system.skills.prc.passive`)",
+  
+            "resources.name": "자원",
+            "resources.key": "system.resources.#",
+
+            "savingThrows.name": "내성 굴림",
+            "savingThrows.help": "강인, 반사, 의지 내성 굴림 (패스파인더 및 D&D 3.5). 능력치 기반 내성 굴림 (D&D 5)은 포함되지 않습니다.",
+            "savingThrows.icon": "label",
+            "savingThrows.key": "다양함 (예: `system.saves.will`)",
+
+            "dmgResVuln.name": "피해 저항/취약",
+            "dmgResVuln.help": "피해 저항, 면역, 취약/약점. 참고: 피해 및 상태 면역을 혼합하는 시스템(예: PF2e)의 경우, 상태 면역이 피해 면역에 포함됩니다.",
+            "dmgResVuln.icon": "label",
+            "dmgResVuln.key": "다양함 (예: `system.traits.di/dr/dv`)",
+
+            "condImm.name": "상태 면역",
+            "condImm.help": "상태 면역. 참고: 피해 및 상태 면역을 혼합하는 시스템(예: PF2e)의 경우, 상태 면역이 피해 면역에 포함됩니다.",
+            "condImm.icon": "label",
+            "condImm.key": "다양함 (예: `system.traits.ci`)",
+
+            "spells.name": "주문 슬롯",
+            "spells.key": "다양함 (예: `system.spells.spell#`)",
+
+            "talents.name": "특성",
+            "talents.icon": "특성의 이미지",
+            "talents.key": "system.talentList.#.name",
+
+            "items.name": "아이템 사용 횟수",
+            "items.icon": "아이템의 이미지",
+            "items.key": "DnD5e 전용 (액터 시트에서 아이템별로 전환 가능)"
+
+          "moveDown": "아래로 이동",
+          "moveUp": "위로 이동",
+          "delete": "삭제",
+          "deleteConfirm": "이 값을 삭제하시겠습니까?",
+          "add": "추가",
+          "save": "사용자 지정 툴팁 값 저장",
+
+          "toggleDebug.offLabel": "데이터 키 디버거 활성화",
+          "toggleDebug.onLabel": "데이터 키 디버거 비활성화"
+        },
+        "importExport": {
+          "name": "툴팁 값 가져오기 / 내보내기",
+          "label": "가져오기 / 내보내기",
+          "hint": "한 월드에서 툴팁 값을 내보내고 다른 월드로 가져오거나 (또는 디버깅을 돕기 위해 모듈 제작자와 공유하세요).",
+  
+          "title": "모듈 제작자의 토큰 툴팁 가져오기 / 내보내기",
+
+          "instructions": {
+           "bugs": "버그를 신고하거나 기능을 요청하려면 여기를 클릭하세요",
+           "notes": "이 유틸리티는 툴팁 값 설정만 가져오거나 내보냅니다. 다른 툴팁 설정(예: 지속적 툴팁, 플레이어용 HP 단순화 등)은 포함되지 않습니다. '내보내기'를 클릭하면 `.json` 파일을 다운로드하라는 메시지가 표시됩니다. '가져오기'를 클릭하면 이전에 다운로드한 `.json` 파일을 선택하라는 메시지가 표시됩니다. Illandril의 토큰 툴팁의 다른 버전에서 내보낸 설정을 가져오려고 하면 실패할 수 있습니다."
+          },
+
+          "import": "가져오기",
+          "export": "내보내기",
+          "close": "닫기",
+          "confirmImport": "현재 툴팁 값 설정을 덮어쓰시겠습니까? 경고: '실행 취소'는 없습니다. 만약 잘못된 곳으로 가져오기 했고 복원할 유효한 저장된 내보내기 파일이 없다면, 이전 설정을 기억을 더듬어 수동으로 하나씩 복원해야 합니다.",
+          "error": "선택된 파일을 읽을 수 없습니다. 모듈 제작자의 토큰 툴팁과 동일한 버전을 사용하던 월드에서 내보낸 파일을 사용 중인지 확인하세요.",
+          "success": "툴팁 값이 가져와졌습니다. '툴팁 값 설정'을 클릭하여 예상한 설정이 제대로 가져와졌는지 확인해 보세요."
+        },
+        "persistentTooltips": {
+          "name": "지속적 툴팁",
+          "label": "지속적 툴팁 설정",
+          "hint": "화면의 특정 영역에 툴팁이 항상 표시되도록 설정합니다. 참고: 이 모듈의 다른 대부분의 설정과 달리, 이 설정은 모든 사용자에게 적용되는 것이 아니라 클라이언트별로 설정 가능하여, GM 화면을 복잡하게 만들지 않고도 플레이어가 항상 볼 수 있도록 탁상형 모니터에 지속적 툴팁을 표시할 수 있습니다.",
+  
+          "title": "지속적 툴팁 설정",
+
+          "instructions": {
+            "show": "도움말 표시",
+            "hide": "도움말 숨기기",
+            "bugs": "버그를 신고하거나 기능을 요청하려면 여기를 클릭하세요",
+            "top": "지속적 툴팁은 연관된 액터가 현재 장면에 보일 때마다 표시됩니다. 여러 개의 툴팁이 동일한 위치에 설정된 경우, 옆에 나란히 배치됩니다. 설정된 툴팁이 보이지 않는다면, ID가 올바른지 확인하고 (ID 앞뒤에 불필요한 공백이 없는지 확인하세요), 토큰 위로 마우스를 올려 툴팁을 볼 수 있는 권한이 있는지 확인하세요.",
+            "type": "액터는 액터 ID를 기반으로 툴팁에 대한 토큰을 찾습니다. 사용자는 지정된 사용자가 선택한 캐릭터(토큰 선택이 아닌 사용자 설정을 통해 선택된 캐릭터)를 기반으로 툴팁에 대한 토큰을 찾습니다.",
+            "id": "액터의 ID를 얻으려면, 액터 시트를 열고 대화창 제목의 책 아이콘을 클릭하여 액터의 ID를 복사하세요.\n사용자의 ID를 얻으려면, 플레이어 목록에서 사용자를 우클릭하고 사용자 설정 대화창을 연 다음, 대화창 제목의 책 아이콘을 클릭하여 사용자의 ID를 복사하세요.",
+            "id_bad": "지정된 ID가 유효하지 않음을 나타냅니다 - 유형과 ID 값을 다시 확인하세요.",
+            "id_good": "지정된 ID는 유효하지만, 현재 장면에 연관된 토큰이 없음을 나타냅니다. 아이콘 위에 마우스를 올리면 연관된 사용자 또는 액터의 이름을 볼 수 있습니다.",
+            "id_best": "지정된 ID는 유효하며, 현재 장면에 연관된 토큰이 있음을 나타냅니다. 아이콘 위에 마우스를 올리면 연관된 토큰의 이름을 볼 수 있습니다.",
+            "rotation": "툴팁의 회전 각도 (시계 방향)."
+          },
+
+          "header": {
+            "type": "유형",
+            "id": "ID",
+            "position": "위치",
+            "rotation": "회전"
+          },
+
+          "positions": {
+            "top": {
+               "left": "위 왼쪽",
+               "center": "위 중앙",
+               "right": "위 오른쪽"
+            },
+            "center": {
+               "left": "왼쪽",
+               "center": "중앙",
+               "right": "오른쪽"
+            },
+            "bottom": {
+              "left": "아래 왼쪽",
+              "center": "아래 중앙",
+              "right": "아래 오른쪽"
+            }
+          },
+
+          "rotations": {
+            "0": "0°",
+            "90": "90°",
+            "180": "180°",
+            "270": "270°"
+          },
+
+          "moveDown": "아래로 이동",
+          "moveUp": "위로 이동",
+          "delete": "삭제",
+          "deleteConfirm": "이 값을 삭제하시겠습니까?",
+          "add": "추가",
+          "save": "지속적 툴팁 저장"
+        }
+      },
+      "visibility": {
+        "label": "툴팁 가시성",
+        "hint": "툴팁 가시성은 플레이어에게 툴팁이 표시되는 토큰을 조정합니다. GM에게는 모든 토큰에 툴팁이 표시됩니다.",
+        "choice": {
+          "FRIENDLY": "우호적인 토큰 (PC 및 NPC)",
+          "NEUTRAL": "중립 및 우호적인 토큰 (PC 및 NPC)",
+          "ALL_PLAYERS": "플레이어 토큰 (모든 성향)",
+          "OWNER": "소유한 액터 토큰",
+          "OBSERVER": "관찰 중인 액터 토큰",
+          "LIMITED": "제한된 권한 액터 토큰",
+          "ALL": "모든 토큰",
+          "NONE": "토큰 없음 (GM에게만 툴팁 표시)"
+        }
+      },
+      "simplifyHP": {
+        "label": "플레이어용 HP 단순화",
+        "hint": "플레이어에게 표시되는 HP 값을 단순화합니다 (HP가 표시되는 경우에 한함 - HP가 아예 표시되는 시점을 설정하려면 위의 '툴팁 값 설정'을 구성하세요). GM에게는 항상 단순화되지 않은 값이 표시됩니다.",
+        "choice": {
+          "NONE": "단순화하지 않음 (HP 값 표시)",
+          "FOUR_HEARTS__PLAYERS_ALL": "네 개의 하트 (모든 토큰)",
+          "FOUR_HEARTS__PLAYERS_NON_FRIENDLY": "네 개의 하트 (비우호적인 토큰)",
+          "FOUR_HEARTS__PLAYERS_HOSTILE": "네 개의 하트 (적대적인 토큰)",
+          "FOUR_HEARTS__PLAYERS_NON_OBSERVER": "네 개의 하트 (관찰되지 않은 토큰)",
+          "FIVE_HEARTS__PLAYERS_ALL": "다섯 개의 하트 (모든 토큰)",
+          "FIVE_HEARTS__PLAYERS_NON_FRIENDLY": "다섯 개의 하트 (비우호적인 토큰)",
+          "FIVE_HEARTS__PLAYERS_HOSTILE": "다섯 개의 하트 (적대적인 토큰)",
+          "FIVE_HEARTS__PLAYERS_NON_OBSERVER": "다섯 개의 하트 (관찰되지 않은 토큰)"
+        }
+      },
+      "simplifyDamageTypes": {
+        "label": "저항/면역/취약 스타일",
+        "hint": "저항, 면역, 취약에 대한 피해 및 상태 유형 값이 어떻게 표시되는지 지정합니다. 모든 유형에 아이콘이 있는 것은 아닙니다. 유형에 아이콘이 없는 경우, '아이콘'이 선택되었더라도 이름이 표시됩니다.",
+        "choice": {
+            "NONE": "레이블 (검은색)",
+            "COLOR": "레이블 (색상)",
+            "ICON": "아이콘 (검은색)",
+            "COLOR_ICON": "아이콘 (색상)",
+            "ICON_AND_TEXT": "아이콘 및 레이블 (색상)"
+        }
+      },
+      "entityPermission.choice": {
+        "NONE": "모두에게 표시",
+        "LIMITED": "제한 이상",
+        "OBSERVER": "관찰자 이상",
+        "OWNER": "소유자 또는 GM",
+        "FRIENDLY": "우호적 (+GM)",
+        "NEUTRAL": "중립 이상 (+GM)",
+        "SHOW_TO_GMS_ONLY": "GM만",
+        "HIDE_FROM_EVERYONE": "모두에게 숨기기"
+      },
+      "gmPermission.choice": {
+        "ALL": "GM에게 플레이어 정보 표시",
+        "NPC_ONLY": "GM에게 NPC 정보만 표시"
+      },
+      "disableTooltips": {
+        "label": "툴팁 비활성화",
+        "hint": "체크하면, GM이 이 모듈에 대해 다른 설정을 어떻게 구성했는지에 관계없이 당신에게 툴팁이 표시되지 않습니다 (클라이언트 설정 - 다른 플레이어에게는 영향을 미치지 않습니다). 참고: 동적 툴팁에만 적용되며, '지속적 툴팁 설정' 메뉴에서 자유롭게 추가하거나 삭제할 수 있는 지속적 툴팁에는 영향을 미치지 않습니다."
+      },
+
+      "rowsPerTooltip.label": "툴팁 행 수 (호버)",
+      "rowsPerTooltip.hint": "툴팁의 각 열에 표시되는 최대 행 수입니다.",
+
+      "tooltipFontSize.label": "툴팁 글꼴 크기 (호버)",
+      "tooltipFontSize.hint": "호버 시 표시되는 툴팁의 글꼴 크기와 애플리케이션의 다른 대부분의 장소에서 사용되는 글꼴 크기의 비율입니다.",
+
+      "rowsPerPersistent.label": "지속적 툴팁 행 수",
+      "rowsPerPersistent.hint": "지속적 툴팁의 각 열에 표시되는 최대 행 수입니다.",
+
+      "persistentFontSize.label": "지속적 툴팁 글꼴 크기",
+      "persistentFontSize.hint": "지속적 툴팁의 글꼴 크기와 애플리케이션의 다른 대부분의 장소에서 사용되는 글꼴 크기의 비율입니다.",
+
+      "darkMode.label": "어두운 모드",
+      "darkMode.hint": "체크하면, 툴팁이 어두운 색 구성표로 표시됩니다 (밝은 색과 반대).",
+
+      "showOnLeft.label": "왼쪽에 표시",
+      "showOnLeft.hint": "체크하면, 툴팁이 토큰의 왼쪽에 표시됩니다 (오른쪽과 반대).",
+
+      "showTokenName.label": "토큰 이름 표시",
+      "showTokenName.hint": "체크하면, 툴팁 상단에 토큰의 이름이 표시됩니다.",
+
+      "showOnHighlightHotkey.label": "강조 단축키 사용 시 표시",
+      "showOnHighlightHotkey.hint": "체크하면, 오브젝트 강조 단축키(기본값은 ALT; '설정 제어'에서 구성 가능)를 누를 때 툴팁이 표시됩니다 (현재 선택된 토큰에만 해당). 참고: '툴팁 단축키로만 표시'와는 호환되지 않습니다.",
+
+      "showOnlyWithTooltipHotkey.label": "툴팁 단축키 사용 시에만 표시",
+      "showOnlyWithTooltipHotkey.hint": "체크하면, 토큰 위에 마우스를 올린 상태에서 '툴팁 표시' 단축키(기본값은 SHIFT; '설정 제어'에서 구성 가능)를 누를 때만 툴팁이 표시됩니다. 참고: '강조 단축키 사용 시 표시'와는 호환되지 않습니다."
+    },
+
+    "debugDisplay.empty": "토큰 위에 마우스를 올리면 해당 액터의 데이터 키가 표시됩니다",
+
+    "hotkey": {
+      "showTooltip": {
+         "label": "툴팁 표시",
+         "hint": "\"툴팁 단축키 사용 시에만 표시\"가 활성화된 경우, 토큰 위에 마우스를 올린 상태에서 이 버튼을 누를 때만 툴팁이 표시됩니다."
+      }
+    },
+
+    "pactAbbreviation": "P",
+    "spellPointsAbbreviation": "P",
+    "powerAbbreviation": "P",
+    "cantripAbbreviation": "C",
+    "focusAbbreviation": "F",
+
+    "savingThrowFort": "Fort",
+    "savingThrowRef": "Ref",
+    "savingThrowWill": "Will",
+
+    "touchACAbbreviation": "T",
+    "flatFootedACAbbreviation": "FF",
+    "cmdAbbreviation": "CMD",
+    "meleeDefenseAbbreviation": "M.Def",
+    "rangedDefenseAbbreviation": "R.Def",
+
+    "tooltip": {
+      "damageImmunities.label": "면역",
+      "damageResistances.label": "저항",
+      "damageVulnerabilities.label": "취약",
+      "weaknesses.label": "약점",
+      "conditionImmunities.label": "상태 면역"
+    },
+
+    "tooltipSwitch": "툴팁에 표시",
+    "tooltipShown": "툴팁에 표시됨",
+    "tooltipNotShown": "툴팁에 표시되지 않음"
+  }
+}
